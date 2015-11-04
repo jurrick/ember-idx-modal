@@ -6,10 +6,10 @@
     {{#em-modal-body}}
         {{message}}
         {{yield}}
-        <!--Confirmation with a reason-->
+        {{!-- <!--Confirmation with a reason-->
         {{#if reasonModal}}
         {{view Ember.Select valueBinding="message" contentBinding="messages" optionValuePath="id" optionLabelPath="content.msg"}}
-        {{/if}}
+        {{/if}} --}}
     {{/em-modal-body}}
     {{#em-modal-footer}}
         {{em-button class=submit-button-classes on-click='confirmPressed' default=submit-button-title icon-default=submit-button-default-icons icon-executing=submit-button-execute-icons executing=submit-button-submitting-title}}
