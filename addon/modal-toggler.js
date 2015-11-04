@@ -52,11 +52,11 @@ export default Em.Component.extend(WithConfigMixin, StyleBindingsMixin, {
    * @method modalAsProperty
    */
   modalAsProperty: (function() {
-    var modalId = this.get('modal-id'); 
+    var modalId = this.get('modal-id');
 
     if (modalId) {
       return Em.run.schedule('afterRender', this, function() {
-        return this.set('modal', Em.View.views[modalId]);
+        return this.set('modal', this._viewRegistry[this.get('modal-id')]);
       });
     } else {
       return this.set('modal', this.nearestOfType(Modal));
